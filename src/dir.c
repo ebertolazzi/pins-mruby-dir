@@ -12,9 +12,9 @@
 #include <sys/types.h>
 #if defined(_WIN32) || defined(_WIN64)
   #define MAXPATHLEN 1024
- #if !defined(PATH_MAX)
+#if !defined(PATH_MAX)
   #define PATH_MAX MAX_PATH
- #endif
+#endif
   #define S_ISDIR(B) ((B)&_S_IFDIR)
   #include "Win/dirent.c"
   #include <direct.h>
@@ -277,7 +277,7 @@ mrb_dir_tell(mrb_state *mrb, mrb_value self)
 }
 
 void
-mrb_mruby_dir_gem_init(mrb_state *mrb)
+mrb_pins_mruby_dir_gem_init(mrb_state *mrb)
 {
   struct RClass *d;
 
@@ -299,6 +299,6 @@ mrb_mruby_dir_gem_init(mrb_state *mrb)
 }
 
 void
-mrb_mruby_dir_gem_final(mrb_state *mrb)
+mrb_pins_mruby_dir_gem_final(mrb_state *mrb)
 {
 }
